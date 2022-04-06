@@ -10,13 +10,23 @@
 
         <input type="hidden" asp-for="CRASH_ID" />
 
-        <div class="form-group">
+        @*<div class="form-group">
             <label asp-for="ROUTE">ROUTE:</label>
             <input asp-for="ROUTE" class="form-control" />
         </div>
         <div class="form-group">
             <label asp-for="MILEPOINT">MILEPOINT:</label>
             <input asp-for="MILEPOINT" class="form-control" />
+        </div>*@
+        <div class="form-group">
+            <p class="text-muted">Format: MM/DD/YYYY</p>
+            <label asp-for="Dates">DATE:</label>
+            <input asp-for="Dates" class="form-control" />
+        </div>
+        <div class="form-group">
+            <p class="text-muted">Format: HH:MM:SS</p>
+            <label asp-for="Times">TIME:</label>
+            <input asp-for="Times" class="form-control" />
         </div>
         <div class="form-group">
             <label asp-for="MAIN_ROAD_NAME">MAIN ROAD NAME:</label>
