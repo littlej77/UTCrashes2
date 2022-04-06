@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -105,7 +106,7 @@ namespace UTCrash2.Controllers
             _repo.EditCrash(c);
             return RedirectToAction("AllCrashes"); // return to all crashes page
         }
-
+        [Authorize(Roles = "Administrator")]
         public IActionResult DeleteCrash(Crash c)
         {
             _repo.DeleteCrash(c);
