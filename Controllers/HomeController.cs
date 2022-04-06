@@ -110,9 +110,10 @@ namespace UTCrash2.Controllers
         }
 
         [Authorize(Roles = "Administrator")]
-        public IActionResult DeleteCrash(Crash c)
+        public IActionResult DeleteCrash(int crashid)
         {
-            _repo.DeleteCrash(c);
+            var crash = _repo.crashes.Single(x => x.CRASH_ID == crashid);
+            _repo.DeleteCrash(crash);
             return RedirectToAction("AllCrashes"); // return to all crashes page
         }
 
