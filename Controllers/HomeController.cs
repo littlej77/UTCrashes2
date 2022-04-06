@@ -62,6 +62,7 @@ namespace UTCrash2.Controllers
             return View(x);
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpGet]
         public IActionResult AddCrash()
         {
@@ -73,6 +74,7 @@ namespace UTCrash2.Controllers
             return View("EditCrash", crash);
         }
 
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         public IActionResult AddCrash(Crash c)
         {
@@ -106,6 +108,7 @@ namespace UTCrash2.Controllers
             _repo.EditCrash(c);
             return RedirectToAction("AllCrashes"); // return to all crashes page
         }
+
         [Authorize(Roles = "Administrator")]
         public IActionResult DeleteCrash(Crash c)
         {
