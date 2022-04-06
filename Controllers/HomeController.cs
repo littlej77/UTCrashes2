@@ -62,6 +62,35 @@ namespace UTCrash2.Controllers
             return View(x);
         }
 
+        public IActionResult ViewCrashes(string county, int pageNum = 1)
+        {
+            int pageSize = 30; // display 30 crashes per page
+
+            ViewBag.Counties = _repo.Counties.OrderBy(x => x.COUNTY_NAME).ToList(); // pass in all the county names
+
+            var x = new CrashesViewModel
+            {
+                crashes = _repo.crashes
+                .Where(x => x.COUNTY.COUNTY_NAME == county || county == null) // grab all the crashes where county_name matches the one selected from county vc
+                .OrderBy(x => x.CRASH_ID)
+                .Skip((pageNum - 1) * pageSize) // skip all the previous records
+                .Take(pageSize),
+
+                // determine which page and crashes to display on page
+                PageInfo = new PageInfo
+                {
+                    TotalNumCrashes =
+                        (county == null
+                            ? _repo.crashes.Count()
+                            : _repo.crashes.Where(x => x.COUNTY.COUNTY_NAME == county).Count()),
+                    CrashesPerPage = pageSize,
+                    CurrentPage = pageNum
+                }
+            };
+
+            return View(x);
+        }
+
         [Authorize(Roles = "Administrator")]
         [HttpGet]
         public IActionResult AddCrash()
@@ -137,6 +166,7 @@ namespace UTCrash2.Controllers
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
