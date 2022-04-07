@@ -11,9 +11,26 @@
     <form method="post" asp-controller="Inference" asp-action="Score">
         <div class="text-danger font-weight-bold bg-light" asp-validation-summary="All"></div>
         <div class="form-group">
+            <label>Month</label> <br />
+            <select>
+                <option asp-for="Month" value=1>January</option>
+                <option asp-for="Month" value=2>Febuary</option>
+                <option asp-for="Month" value=3>March</option>
+                <option asp-for="Month" value=4>April</option>
+                <option asp-for="Month" value=5>May</option>
+                <option asp-for="Month" value=6>June</option>
+                <option asp-for="Month" value=7>July</option>
+                <option asp-for="Month" value=8>August</option>
+                <option asp-for="Month" value=9>September</option>
+                <option asp-for="Month" value=10>October</option>
+                <option asp-for="Month" value=11>November</option>
+                <option asp-for="Month" value=12>December</option>
+
+            </select>
+        </div>
+        <div class="form-group">
             <label>City</label> <br />
             <select>
-                @* WHAT ARE THE CITY values how are the city valued these are technically not correct *@
                 <option asp-for="city_AMERICAN FORK" value=1>American Fork</option>
                 <option asp-for="city_HIGHLAND" value=1>Highland</option>
                 <option asp-for="city_LAYTON" value=1>Layton</option>
