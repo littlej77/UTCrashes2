@@ -62,7 +62,7 @@ namespace UTCrash2.Controllers
             return View(x);
         }
 
-        public IActionResult ViewCrashes(string county, int pageNum = 1)
+        public IActionResult ViewCrashes(string county, int pageNum = 1) //this page is for non-logged in users
         {
             int pageSize = 30; // display 30 crashes per page
 
@@ -91,7 +91,7 @@ namespace UTCrash2.Controllers
             return View(x);
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator")] //limits the access to Adding crash to users who are logged in with Administrative roles.
         [HttpGet]
         public IActionResult AddCrash()
         {
@@ -103,7 +103,7 @@ namespace UTCrash2.Controllers
             return View("EditCrash", crash);
         }
 
-        [Authorize(Roles = "Administrator")]
+        [Authorize(Roles = "Administrator")] //limits the access to Adding crash to users who are logged in with Administrative roles.
         [HttpPost]
         public IActionResult AddCrash(Crash c)
         {

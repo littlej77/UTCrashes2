@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace UTCrash2.Models
 {
-    public class County
+    //this is our model for the counties table that we have in our database
+    public class County 
     {
         [Key]
         [Required]

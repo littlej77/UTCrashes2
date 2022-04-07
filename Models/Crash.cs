@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace UTCrash2.Models
 {
+    //This is our model for our crashes database
     public class Crash
     {
         [Key]

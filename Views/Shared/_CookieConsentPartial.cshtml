@@ -1,5 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Http.Features
 
+@*this page is needed for our GDPR cookie consent*@ 
 @{
     var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
     var showBanner = !consentFeature?.CanTrack ?? false;
