@@ -10,6 +10,7 @@ namespace aspnetcore.Controllers
 { 
     public class InferenceController : Controller
     {
+        
         private InferenceSession _session;
 
         public InferenceController(InferenceSession session)
@@ -33,7 +34,7 @@ namespace aspnetcore.Controllers
             Tensor<float> score = result.First().AsTensor<float>();
             var prediction = new Crash { CRASH_SEVERITY_ID = (int)score.First() };
             result.Dispose();
-            return View("Score", prediction);
+            return View("CalculatorResults", prediction);
         }
     }
 }
