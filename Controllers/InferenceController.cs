@@ -24,7 +24,7 @@ namespace aspnetcore.Controllers
         }
 
         [HttpPost]
-        public IActionResult Score(Crash c)
+        public IActionResult Score(CalculatorData c)
         {
             var result = _session.Run(new List<NamedOnnxValue>
             {
