@@ -89,7 +89,7 @@ namespace UTCrash2
             }
 
             //REDIRECT ALL HTTP TRAFFIC TO HTTPS
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             //REQUIRED FOR GDPR-COMPLIANT COOKIE POLICY
