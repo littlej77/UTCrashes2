@@ -62,6 +62,8 @@ namespace UTCrash2.Models
         [MaxLength(100)]
         public string Times { get; set; }
         public int Days { get; set; }
+        //had to add month
+        public int MONTH { get; set; }
         public int Months { get; set; }
         public int Years { get; set; }
         public int Hours { get; set; }
@@ -81,22 +83,31 @@ namespace UTCrash2.Models
         public int city_OUTSIDE_CITY_LIMITS { get; set; }
 
 
+        //public int COUNTY_NAME_GARFIELD { get; set; }
+        //public int COUNTY_NAME_SALT_LAKE { get; set; }
+
+
 
         public Tensor<float> AsTensor()
         {
             float[] data = new float[]
             {
-                //IDK HOW what we need to be doing with the cities. Cities cannot be strings
-                //IDK if this is in the right space, these also have different names as the ones in here.
-                Months, COUNTY_ID, CRASH_SEVERITY_ID, WORK_ZONE_RELATED, PEDESTRIAN_INVOLVED, BICYCLIST_INVOLVED, 
+                MONTH, COUNTY_NAME_GARFIELD, COUNTY_NAME_SALT_LAKE, CRASH_SEVERITY_ID, WORK_ZONE_RELATED, PEDESTRIAN_INVOLVED, BICYCLIST_INVOLVED, 
                 MOTORCYCLE_INVOLVED, COMMERCIAL_MOTOR_VEH_INVOLVED, TEENAGE_DRIVER_INVOLVED, IMPROPER_RESTRAINT, UNRESTRAINED,
                 DUI, INTERSECTION_RELATED, WILD_ANIMAL_RELATED, DOMESTIC_ANIMAL_RELATED, OVERTURN_ROLLOVER, NIGHT_DARK_CONDITION,
                 OLDER_DRIVER_INVOLVED, SINGLE_VEHICLE, DISTRACTED_DRIVING, DROWSY_DRIVING, ROADWAY_DEPARTURE,
-                city_AMERICAN_FORK, city_HIGHLAND, city_LAYTON, city_OGDEN, city_PROVO, city_ROY, city_SALT_LAKE_CITY//, YO MAN, IDK WHAT ONES WE ARE USING
+                city_AMERICAN_FORK, city_HIGHLAND, city_LAYTON, city_OGDEN, city_PROVO, city_ROY, city_SALT_LAKE_CITY, 
+                city_SOUTH_SALT_LAKE, city_WEST_JORDAN, city_WEST_VALLEY_CITY, city_OUTSIDE_CITY_LIMITS
+
+                //MONTH, COUNTY_ID, CRASH_SEVERITY_ID, WORK_ZONE_RELATED, PEDESTRIAN_INVOLVED, BICYCLIST_INVOLVED,
+                //MOTORCYCLE_INVOLVED, COMMERCIAL_MOTOR_VEH_INVOLVED, TEENAGE_DRIVER_INVOLVED, IMPROPER_RESTRAINT, UNRESTRAINED,
+                //DUI, INTERSECTION_RELATED, WILD_ANIMAL_RELATED, DOMESTIC_ANIMAL_RELATED, OVERTURN_ROLLOVER, NIGHT_DARK_CONDITION,
+                //OLDER_DRIVER_INVOLVED, SINGLE_VEHICLE, DISTRACTED_DRIVING, DROWSY_DRIVING, ROADWAY_DEPARTURE,
+                //city_AMERICAN_FORK, city_HIGHLAND, city_LAYTON, city_OGDEN, city_PROVO, city_ROY, city_SALT_LAKE_CITY,
                 //city_SOUTH_SALT_LAKE, city_WEST_JORDAN, city_WEST_VALLEY_CITY, city_OUTSIDE_CITY_LIMITS
             };
             //Should be 29 temporarily going to 22
-            int[] dimensions = new int[] { 1, 29 };
+            int[] dimensions = new int[] { 1, 28 };
             return new DenseTensor<float>(data, dimensions);
         }
     }
