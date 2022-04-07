@@ -9,7 +9,7 @@
 <div class="card-body">
     <form method="post" asp-controller="Inference" asp-action="Score">
         <div asp-validation-summary="All" class="text-danger"></div>
-
+        <p class="text-muted">Month:</p>
         <div>
             <label>Month:</label>
             <select asp-for="MONTH">
@@ -139,6 +139,7 @@
             </select>
         </div>
         <br />
+        <p class="text-muted">Other crash features:</p>
         <div class="card-body">
             <label>Pedestrian Involved</label> <br />
             <select asp-for="PEDESTRIAN_INVOLVED_TRUE">
