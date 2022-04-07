@@ -2,6 +2,185 @@
     ViewData["Title"] = "Crash Severity Calculator";
 }
 
+<div class="d-flex justify-content-center">
+    <h1>Crash Severity Calculator</h1>
+    <p>this is the predict crash severity part from 455</p>
+</div>
 
-<h1> Crash Severity Calculator</h1>
-<p>this is the predict crash severity part from 455</p>
+<div class="d-flex justify-content-center">
+    <form method="post" asp-controller="Inference" asp-action="Score">
+        <div class="form-group">
+            <label>Route: </label>
+            <input asp-for="ROUTE" />
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Milepoint: </label>
+            <input asp-for="MILEPOINT" />
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Main Road Name</label>
+            <input asp-for="MAIN_ROAD_NAME" />
+            <br />
+        </div>
+        <div class="form-group">
+            <label>City</label>
+            <input asp-for="CITY" />
+            <br />
+        </div>
+        <div class="form-group">
+            <label>County</label>
+            <input asp-for="COUNTY" />
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Crash Severity</label>
+            <input asp-for="CRASH_SEVERITY_ID" /> <br />
+            <select>
+                <option asp-for="CRASH_SEVERITY_ID" value=1>No Injury</option>
+                <option asp-for="CRASH_SEVERITY_ID" value=2>Possible Injury</option>
+                <option asp-for="CRASH_SEVERITY_ID" value=3>Minor Injury</option>
+                <option asp-for="CRASH_SEVERITY_ID" value=4>Serious Injury</option>
+                <option asp-for="CRASH_SEVERITY_ID" value=5>Fatal</option>
+            </select>
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Work Zone</label> <br />
+            <input type="radio" asp-for="WORK_ZONE_RELATED" value=0 />Yes
+            <input type="radio" asp-for="WORK_ZONE_RELATED" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Pedestrian Involved</label> <br />
+            <input type="radio" asp-for="PEDESTRIAN_INVOLVED" value=0 />Yes
+            <input type="radio" asp-for="PEDESTRIAN_INVOLVED" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Bicyclist Involved</label> <br />
+            <input type="radio" asp-for="BICYCLIST_INVOLVED" value=0 />Yes
+            <input type="radio" asp-for="BICYCLIST_INVOLVED" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Motorcycle Involved</label> <br />
+            <input type="radio" asp-for="MOTORCYCLE_INVOLVED" value=0 />Yes
+            <input type="radio" asp-for="MOTORCYCLE_INVOLVED" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Commercial Motor Vehicle Involved</label> <br />
+            <input type="radio" asp-for="COMMERCIAL_MOTOR_VEH_INVOLVED" value=0 />Yes
+            <input type="radio" asp-for="COMMERCIAL_MOTOR_VEH_INVOLVED" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Teenage Driver Involved</label> <br />
+            <input type="radio" asp-for="TEENAGE_DRIVER_INVOLVED" value=0 />Yes
+            <input type="radio" asp-for="TEENAGE_DRIVER_INVOLVED" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Improper Restraint</label> <br />
+            <input type="radio" asp-for="IMPROPER_RESTRAINT" value=0 />Yes
+            <input type="radio" asp-for="IMPROPER_RESTRAINT" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Unrestrained</label> <br />
+            <input type="radio" asp-for="UNRESTRAINED" value=0 />Yes
+            <input type="radio" asp-for="UNRESTRAINED" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Drunk Under the Influence</label> <br />
+            <input type="radio" asp-for="DUI" value=0 />Yes
+            <input type="radio" asp-for="DUI" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Intersection</label> <br />
+            <input type="radio" asp-for="INTERSECTION_RELATED" value=0 />Yes
+            <input type="radio" asp-for="INTERSECTION_RELATED" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Wild Animal</label> <br />
+            <input type="radio" asp-for="WILD_ANIMAL_RELATED" value=0 />Yes
+            <input type="radio" asp-for="WILD_ANIMAL_RELATED" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Domestic Animal</label> <br />
+            <input type="radio" asp-for="DOMESTIC_ANIMAL_RELATED" value=0 />Yes
+            <input type="radio" asp-for="DOMESTIC_ANIMAL_RELATED" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Overturn</label> <br />
+            <input type="radio" asp-for="OVERTURN_ROLLOVER" value=0 />Yes
+            <input type="radio" asp-for="OVERTURN_ROLLOVER" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Nighttime or Dark Conditions</label> <br />
+            <input type="radio" asp-for="NIGHT_DARK_CONDITION" value=0 />Yes
+            <input type="radio" asp-for="NIGHT_DARK_CONDITION" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Older Driver Involved</label> <br />
+            <input type="radio" asp-for="OLDER_DRIVER_INVOLVED" value=0 />Yes
+            <input type="radio" asp-for="OLDER_DRIVER_INVOLVED" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Single Vehicle Accident</label> <br />
+            <input type="radio" asp-for="SINGLE_VEHICLE" value=0 />Yes
+            <input type="radio" asp-for="SINGLE_VEHICLE" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Distracted Driving</label> <br />
+            <input type="radio" asp-for="DISTRACTED_DRIVING" value=0 />Yes
+            <input type="radio" asp-for="DISTRACTED_DRIVING" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Drowsy Driving</label> <br />
+            <input type="radio" asp-for="DROWSY_DRIVING" value=0 />Yes
+            <input type="radio" asp-for="DROWSY_DRIVING" value=1 checked />No
+            <br />
+        </div>
+        <div class="form-group">
+            <label>Roadway Departure</label> <br />
+            <input type="radio" asp-for="ROADWAY_DEPARTURE" value=0 />Yes
+            <input type="radio" asp-for="ROADWAY_DEPARTURE" value=1 checked />No
+            <br />
+        </div>
+
+        <button type="submit">Calculate</button>
+    </form>
+</div>
+
+@*<select asp-for="">
+        <option value="0">Yes</option>
+        <option value="1">No</option>
+    </select>*@
+
+
+<form method="post" asp-controller="Inference" asp-action="Score">
+
+    <div><label>Age:</label><input asp-for="Age" value="25" /></div>
+    <div><label>BMI:</label><input asp-for="Bmi" value="32.23" /></div>
+    <div><label>Children</label><input asp-for="NumChildren" value="1" /></div>
+    <div><label>Male?</label><input asp-for="Male" value="0" /></div>
+    <div><label>Smoker?</label><input asp-for="Smoker" value="0" /></div>
+    <div><label>Region_Northwest</label><input asp-for="Region_Northwest" value="0" /></div>
+    <div><label>Region_Southeast</label><input asp-for="Region_Southeast" value="1" /></div>
+    <div><label>Region_Southwest</label><input asp-for="Region_Southwest" value="0" /></div>
+
+    <button type="submit">Calculate</button>
+</form>
