@@ -35,7 +35,7 @@ namespace aspnetcore.Controllers
 
             //Tensor<float> score = result.First().AsTensor<float>();
             //this score is passing in as null
-            Tensor<string> score = result.First().AsTensor<string>();
+            Tensor<long> score = result.First().AsTensor<long>();
             //NEW ERROR ... CANNOT BE NULL
             var prediction = new Prediction { PredictedValue = score.First() }; //CRASH_SEVERITY_ID = (int)score.First() }
             result.Dispose();
