@@ -10,7 +10,6 @@ namespace aspnetcore.Controllers
 { 
     public class InferenceController : Controller
     {
-        
         private InferenceSession _session;
 
         public InferenceController(InferenceSession session)
