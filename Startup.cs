@@ -41,7 +41,7 @@ namespace UTCrash2
             services.AddControllersWithViews();
 
             services.AddSingleton<InferenceSession>(
-              new InferenceSession("Models/car_crashes_final.onnx")
+              new InferenceSession("wwwroot/onnx/car_crashes_final.onnx")
             );
 
             services.Configure<CookiePolicyOptions>(options =>
