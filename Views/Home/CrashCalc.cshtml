@@ -13,25 +13,25 @@
         <div class="form-group">
             <label>Month</label> <br />
             <select>
-                <option asp-for="Month" value=1>January</option>
-                <option asp-for="Month" value=2>Febuary</option>
-                <option asp-for="Month" value=3>March</option>
-                <option asp-for="Month" value=4>April</option>
-                <option asp-for="Month" value=5>May</option>
-                <option asp-for="Month" value=6>June</option>
-                <option asp-for="Month" value=7>July</option>
-                <option asp-for="Month" value=8>August</option>
-                <option asp-for="Month" value=9>September</option>
-                <option asp-for="Month" value=10>October</option>
-                <option asp-for="Month" value=11>November</option>
-                <option asp-for="Month" value=12>December</option>
+                <option asp-for="Months" value=1>January</option>
+                <option asp-for="Months" value=2>Febuary</option>
+                <option asp-for="Months" value=3>March</option>
+                <option asp-for="Months" value=4>April</option>
+                <option asp-for="Months" value=5>May</option>
+                <option asp-for="Months" value=6>June</option>
+                <option asp-for="Months" value=7>July</option>
+                <option asp-for="Months" value=8>August</option>
+                <option asp-for="Months" value=9>September</option>
+                <option asp-for="Months" value=10>October</option>
+                <option asp-for="Months" value=11>November</option>
+                <option asp-for="Months" value=12>December</option>
 
             </select>
         </div>
         <div class="form-group">
             <label>City</label> <br />
             <select>
-                <option asp-for="city_AMERICAN FORK" value=1>American Fork</option>
+                @*<option asp-for="city_AMERICAN FORK" value=1>American Fork</option>
                 <option asp-for="city_HIGHLAND" value=1>Highland</option>
                 <option asp-for="city_LAYTON" value=1>Layton</option>
                 <option asp-for="city_OGDEN" value=1>Ogden</option>
@@ -43,6 +43,22 @@
                 <option asp-for="city_WEST VALLEY CITY" value=1>West Valley City</option>
                 <option asp-for="city_OUTSIDE CITY LIMITS" value=1>Outside City Limits</option>
                 <option asp-for="CITY" value=0>City Not Listed</option>
+
+
+                lets try this but with CITY as asp-for and value is the city
+                BUT I DON'T THINK WE CAN PASS THROUGH STRINGS *@
+                <option asp-for="CITY" value="American Fork">American Fork</option>
+                <option asp-for="CITY" value="Highland">Highland</option>
+                <option asp-for="CITY" value="Layton">Layton</option>
+                <option asp-for="CITY" value="Ogden">Ogden</option>
+                <option asp-for="CITY" value="Provo">Provo</option>
+                <option asp-for="CITY" value="Roy">Roy</option>
+                <option asp-for="CITY" value="Salt Lake City" selected>Salt Lake City</option>
+                <option asp-for="CITY" value="South Salt Lake">South Salt Lake</option>
+                <option asp-for="CITY" value="West Jordan">West Jordan</option>
+                <option asp-for="CITY" value="West Valley City">West Valley City</option>
+                <option asp-for="CITY" value="Outside City Limits">Outside City Limits</option>
+                @*<option asp-for="CITY" value=0>City Not Listed</option>*@
             </select>
         </div>
         <div class="form-group">
@@ -196,7 +212,7 @@
             <br />
         </div>
         <div class="form-group">
-            <label>Nighttime or Dark Conditions</label> <br />
+            <label>Night or Dark Conditions</label> <br />
             <select>
                 <option asp-for="NIGHT_DARK_CONDITION" value=0>Yes</option>
                 <option asp-for="NIGHT_DARK_CONDITION" value=1 selected>No</option>

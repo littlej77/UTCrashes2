@@ -68,22 +68,13 @@ namespace UTCrash2.Models
 
         public Tensor<int> AsTensor()
         {
-            float[] data = new int[]
+            int[] data = new int[]
             {
                 //IDK if this is in the right space, these also have different names as the ones in here.
-                'Month','county_name_GARFIELD',
-                'county_name_SALT LAKE',
-                'city_AMERICAN FORK',
-                'city_HIGHLAND',
-                'city_LAYTON',
-                'city_OGDEN',
-                'city_OUTSIDE CITY LIMITS',
-                'city_PROVO','city_ROY','city_SALT LAKE CITY',
-                'city_SOUTH SALT LAKE',
-                'city_WEST JORDAN','city_WEST VALLEY CITY',
-                'pedestrian_involved_True','bicyclist_involved_True','motorcycle_involved_True','improper_restraint_True','unrestrained_True',
-                'dui_True','intersection_related_True','wild_animal_related_True','overturn_rollover_True','commercial_motor_veh_involved_True',
-                'older_driver_involved_True','single_vehicle_True','distracted_driving_True','drowsy_driving_True','roadway_departure_True'            
+                Months, CITY, COUNTY_ID, CRASH_SEVERITY_ID, WORK_ZONE_RELATED, PEDESTRIAN_INVOLVED, BICYCLIST_INVOLVED, 
+                MOTORCYCLE_INVOLVED, COMMERCIAL_MOTOR_VEH_INVOLVED, TEENAGE_DRIVER_INVOLVED, IMPROPER_RESTRAINT, UNRESTRAINED,
+                DUI, INTERSECTION_RELATED, WILD_ANIMAL_RELATED, DOMESTIC_ANIMAL_RELATED, OVERTURN_ROLLOVER, NIGHT_DARK_CONDITION,
+                OLDER_DRIVER_INVOLVED, SINGLE_VEHICLE, DISTRACTED_DRIVING, DROWSY_DRIVING, ROADWAY_DEPARTURE
             };
             int[] dimensions = new int[] { 1, 29 };
             return new DenseTensor<int>(data, dimensions);
