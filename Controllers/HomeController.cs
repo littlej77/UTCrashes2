@@ -152,10 +152,10 @@ namespace UTCrash2.Controllers
             return View();
         }
 
-        public IActionResult CrashCalc() // displays calculator page
-        {
-            return View();
-        }
+        //public IActionResult CrashCalc() // displays calculator page
+        //{
+        //    return View();
+        //}
 
         public IActionResult Solutions() // displays solutions page
         {

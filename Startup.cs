@@ -41,7 +41,7 @@ namespace UTCrash2
             services.AddControllersWithViews();
 
             services.AddSingleton<InferenceSession>(
-              new InferenceSession("car_crashes_final1.onnx")
+              new InferenceSession("Models/car_crashes_final.onnx")
             );
 
             services.Configure<CookiePolicyOptions>(options =>
@@ -133,6 +133,10 @@ namespace UTCrash2
                 //endpoints.MapControllerRoute(
                 //    name: "default",
                 //    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                //endpoints.MapControllerRoute(
+                //    name: "default",
+                //    pattern: "{controller=Inference}/{action=EnterData}/{id?}");
 
                 endpoints.MapDefaultControllerRoute();
 
