@@ -84,17 +84,17 @@ namespace UTCrash2
             {
                 app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                //ENABLE HSTS
+                // ENABLE HSTS
                 app.UseHsts();
             }
 
             //REDIRECT ALL HTTP TRAFFIC TO HTTPS
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
             //REQUIRED FOR GDPR-COMPLIANT COOKIE POLICY
             app.UseCookiePolicy();
-
-
+            
             app.UseRouting();
 
             app.UseAuthentication();
