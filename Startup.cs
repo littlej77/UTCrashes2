@@ -70,6 +70,11 @@ namespace UTCrash2
 
             services.AddScoped<ICrashesRepository, EFCrashesRepository>();
 
+            //ONNX
+            //services.AddControllersWithViews();
+            services.AddSingleton<InferenceSession>(
+                new InferenceSession("insurance_charges_model.onnx") //name of onnx
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
