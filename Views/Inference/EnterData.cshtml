@@ -29,11 +29,87 @@
             </select>
         </div>
         <br />
-        <div>
-            <p>If the crash took place in one of these cities/Counties/locations, please indiciate by entering "1", if not, please enter "0"</p>
-            <p class="text-muted">City:</p>
+        <p>If the crash took place in one of these cities/Counties/locations, please indiciate by entering "Yes"</p>
+        <p class="text-muted">City:</p>
+        <div class="card-body">
+            <label>American Fork:</label> <br />
+            <select asp-for="CITY_AMERICAN_FORK">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="card-body">
+            <label>Highland:</label> <br />
+            <select asp-for="CITY_HIGHLAND">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="card-body">
+            <label>Layton:</label> <br />
+            <select asp-for="CITY_LAYTON">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="card-body">
+            <label>Ogden:</label> <br />
+            <select asp-for="CITY_OGDEN">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="card-body">
+            <label>Provo:</label> <br />
+            <select asp-for="CITY_PROVO">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="card-body">
+            <label>Roy:</label> <br />
+            <select asp-for="CITY_SALT_LAKE_CITY">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="card-body">
+            <label>Salt Lake City:</label> <br />
+            <select asp-for="CITY_SALT_LAKE_CITY">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="card-body">
+            <label>South Salt Lake:</label> <br />
+            <select asp-for="CITY_SOUTH_SALT_LAKE">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="card-body">
+            <label>West Jordan</label> <br />
+            <select asp-for="CITY_WEST_JORDAN">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="card-body">
+            <label>West Valley City:</label> <br />
+            <select asp-for="CITY_WEST_VALLEY_CITY">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <div class="card-body">
+            <label>Outside City Limits</label> <br />
+            <select asp-for="CITY_OUTSIDE_CITY_LIMITS">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        @*<div>
 
-            <label>American Fork:</label><input asp-for="CITY_AMERICAN_FORK" value="1" /><br />
             <label>Highland:</label><input asp-for="CITY_HIGHLAND" value="1" /><br />
             <label>Layton:</label><input asp-for="CITY_LAYTON" value="1" /><br />
             <label>Ogden:</label><input asp-for="CITY_OGDEN" value="1" /><br />
@@ -44,13 +120,25 @@
             <label>West Jordan:</label><input asp-for="CITY_WEST_JORDAN" value="1" /><br />
             <label>West Valley City:</label><input asp-for="CITY_WEST_VALLEY_CITY" value="1" /><br />
             <label>Outside City Limits:</label><input asp-for="CITY_OUTSIDE_CITY_LIMITS" value="1" /><br />
-        </div>
+        </div>*@
+        <br />
 
-        <div>
-            <p class=" text-muted">County:</p>
-            <label>Garfield County:</label><input asp-for="COUNTY_NAME_GARFIELD" value="1" /><br />
-            <label>Salt Lake County:</label><input asp-for="COUNTY_NAME_SALT_LAKE" value="1" /><br />
+        <p class=" text-muted">County:</p>
+        <div class="card-body">
+            <label>Garfield County:</label> <br />
+            <select asp-for="COUNTY_NAME_GARFIELD">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
         </div>
+        <div class="card-body">
+            <label>Salt Lake County:</label> <br />
+            <select asp-for="COUNTY_NAME_SALT_LAKE">
+                <option value="1">Yes</option>
+                <option value="0" selected>No</option>
+            </select>
+        </div>
+        <br />
         <div class="card-body">
             <label>Pedestrian Involved</label> <br />
             <select asp-for="PEDESTRIAN_INVOLVED_TRUE">

@@ -3,7 +3,21 @@
 @*need prediction model UTCrash2.Models.Crash UTCrash2.Models.Prediction*@
 @model UTCrash2.Models.Prediction
 
+<div class="float-right">
+    <h3>Crash Severity Rating:</h3>
+    <ol>
+        <li>no injury</li>
+        <li>possible injury</li>
+        <li>suspected minor injury</li>
+        <li>suspected serious injury</li>
+        <li>fatal</li>
+    </ol>
+</div>
+<br />
+<br />
+<br />
 
 <div class="d-flex justify-content-center">
-    <h1>Prediction: @Model.PredictedValue</h1>
+    <h1>Crash Severity Score Prediction: @Model.PredictedValue</h1>
 </div>
+
