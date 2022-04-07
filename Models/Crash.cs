@@ -30,10 +30,11 @@ namespace UTCrash2.Models
         [Required]
         public int CRASH_SEVERITY_ID { get; set; }
 
-        internal Tensor<object> AsTensor()
-        {
-            throw new NotImplementedException();
-        }
+        //I wonder if this needs to go somewhere else...?
+        //internal Tensor<object> AsTensor()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public int WORK_ZONE_RELATED { get; set; }
         public int PEDESTRIAN_INVOLVED { get; set; }
@@ -66,18 +67,37 @@ namespace UTCrash2.Models
         public int Hours { get; set; }
         public int Mins { get; set; }
 
-        public Tensor<int> AsTensor()
+        //Attempt to do the thing with the cities
+        public int city_AMERICAN_FORK {get; set;}
+        public int city_HIGHLAND { get; set; }
+        public int city_LAYTON { get; set; }
+        public int city_OGDEN { get; set; }
+        public int city_PROVO { get; set; }
+        public int city_ROY { get; set; }
+        public int city_SALT_LAKE_CITY { get; set; }
+        public int city_SOUTH_SALT_LAKE { get; set; }
+        public int city_WEST_JORDAN { get; set; }
+        public int city_WEST_VALLEY_CITY { get; set; }
+        public int city_OUTSIDE_CITY_LIMITS { get; set; }
+
+
+
+        public Tensor<float> AsTensor()
         {
-            int[] data = new int[]
+            float[] data = new float[]
             {
+                //IDK HOW what we need to be doing with the cities. Cities cannot be strings
                 //IDK if this is in the right space, these also have different names as the ones in here.
-                Months, CITY, COUNTY_ID, CRASH_SEVERITY_ID, WORK_ZONE_RELATED, PEDESTRIAN_INVOLVED, BICYCLIST_INVOLVED, 
+                Months, COUNTY_ID, CRASH_SEVERITY_ID, WORK_ZONE_RELATED, PEDESTRIAN_INVOLVED, BICYCLIST_INVOLVED, 
                 MOTORCYCLE_INVOLVED, COMMERCIAL_MOTOR_VEH_INVOLVED, TEENAGE_DRIVER_INVOLVED, IMPROPER_RESTRAINT, UNRESTRAINED,
                 DUI, INTERSECTION_RELATED, WILD_ANIMAL_RELATED, DOMESTIC_ANIMAL_RELATED, OVERTURN_ROLLOVER, NIGHT_DARK_CONDITION,
-                OLDER_DRIVER_INVOLVED, SINGLE_VEHICLE, DISTRACTED_DRIVING, DROWSY_DRIVING, ROADWAY_DEPARTURE
+                OLDER_DRIVER_INVOLVED, SINGLE_VEHICLE, DISTRACTED_DRIVING, DROWSY_DRIVING, ROADWAY_DEPARTURE,
+                city_AMERICAN_FORK, city_HIGHLAND, city_LAYTON, city_OGDEN, city_PROVO, city_ROY, city_SALT_LAKE_CITY//, YO MAN, IDK WHAT ONES WE ARE USING
+                //city_SOUTH_SALT_LAKE, city_WEST_JORDAN, city_WEST_VALLEY_CITY, city_OUTSIDE_CITY_LIMITS
             };
+            //Should be 29 temporarily going to 22
             int[] dimensions = new int[] { 1, 29 };
-            return new DenseTensor<int>(data, dimensions);
+            return new DenseTensor<float>(data, dimensions);
         }
     }
 }

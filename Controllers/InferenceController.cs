@@ -28,11 +28,13 @@ namespace aspnetcore.Controllers
         {
             var result = _session.Run(new List<NamedOnnxValue>
             {
+                //Changed float_input to int_input because didn't like it... int_input does not exist
                 NamedOnnxValue.CreateFromTensor("float_input", c.AsTensor())
             });
             //Tensor<float> score = result.First().AsTensor<float>();
-            Tensor<int> score = result.First().AsTensor<int>();
-            var prediction = new Crash { CRASH_SEVERITY_ID = (int)score.First() };
+            Tensor<string> score = result.First().AsTensor<string>();
+            //NEW ERROR ... CANNOT BE NULL
+            var prediction = new Prediction { PredictedValue = score.First() }; //CRASH_SEVERITY_ID = (int)score.First() }
             result.Dispose();
             return View("CalculatorResults", prediction);
         }
