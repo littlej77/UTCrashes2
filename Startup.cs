@@ -73,7 +73,7 @@ namespace UTCrash2
             //ONNX
             //services.AddControllersWithViews();
             services.AddSingleton<InferenceSession>(
-                new InferenceSession("insurance_charges_model.onnx") //name of onnx
+                new InferenceSession("car_crashes.onnx") //name of onnx
 
         }
 
@@ -137,6 +137,12 @@ namespace UTCrash2
                 endpoints.MapDefaultControllerRoute();
 
                 endpoints.MapRazorPages();
+
+                //maybe need to edit for ONNX
+                //wait jk take me out
+                //endpoints.MapControllerRoute(
+                //    name: "default",
+                //    pattern: "{controller=Inference}/{action=EnterData}/{id?}");
             });
         }
     }
