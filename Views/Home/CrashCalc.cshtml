@@ -14,35 +14,35 @@
         <div class="form-group">
             <label>Month</label> <br />
             <select>
-                <option asp-for="MONTH" value=1>January</option>
-                <option asp-for="MONTH" value=2>Febuary</option>
-                <option asp-for="MONTH" value=3>March</option>
-                <option asp-for="MONTH" value=4>April</option>
-                <option asp-for="MONTH" value=5>May</option>
-                <option asp-for="MONTH" value=6>June</option>
-                <option asp-for="MONTH" value=7>July</option>
-                <option asp-for="MONTH" value=8>August</option>
-                <option asp-for="MONTH" value=9>September</option>
-                <option asp-for="MONTH" value=10>October</option>
-                <option asp-for="MONTH" value=11>November</option>
-                <option asp-for="MONTH" value=12>December</option>
+                <option asp-for="MONTH" value="1">January</option>
+                <option asp-for="MONTH" value="2">Febuary</option>
+                <option asp-for="MONTH" value="3">March</option>
+                <option asp-for="MONTH" value="4">April</option>
+                <option asp-for="MONTH" value="5">May</option>
+                <option asp-for="MONTH" value="6">June</option>
+                <option asp-for="MONTH" value="7">July</option>
+                <option asp-for="MONTH" value="8">August</option>
+                <option asp-for="MONTH" value="9">September</option>
+                <option asp-for="MONTH" value="10">October</option>
+                <option asp-for="MONTH" value="11">November</option>
+                <option asp-for="MONTH" value="12">December</option>
 
             </select>
         </div>
         <div class="form-group">
             <label>City</label> <br />
             <select>
-                <option asp-for="city_AMERICAN_FORK" value=1>American Fork</option>
-                <option asp-for="city_HIGHLAND" value=1>Highland</option>
-                <option asp-for="city_LAYTON" value=1>Layton</option>
-                <option asp-for="city_OGDEN" value=1>Ogden</option>
-                <option asp-for="city_PROVO" value=1>Provo</option>
-                <option asp-for="city_ROY" value=1>Roy</option>
-                <option asp-for="city_SALT_LAKE_CITY" value=1 selected>Salt Lake City</option>
-                <option asp-for="city_SOUTH_SALT_LAKE" value=1>South Salt Lake</option>
-                <option asp-for="city_WEST_JORDAN'," value=1>West Jordan</option>
-                <option asp-for="city_WEST_VALLEY_CITY" value=1>West Valley City</option>
-                <option asp-for="city_OUTSIDE_CITY_LIMITS" value=1>Outside City Limits</option>
+                <option asp-for="city_AMERICAN_FORK" value="1">American Fork</option>
+                <option asp-for="city_HIGHLAND" value="1">Highland</option>
+                <option asp-for="city_LAYTON" value="1">Layton</option>
+                <option asp-for="city_OGDEN" value="1">Ogden</option>
+                <option asp-for="city_PROVO" value="1">Provo</option>
+                <option asp-for="city_ROY" value="1">Roy</option>
+                <option asp-for="city_SALT_LAKE_CITY" value="1" selected>Salt Lake City</option>
+                <option asp-for="city_SOUTH_SALT_LAKE" value="1">South Salt Lake</option>
+                <option asp-for="city_WEST_JORDAN'," value="1">West Jordan</option>
+                <option asp-for="city_WEST_VALLEY_CITY" value="1">West Valley City</option>
+                <option asp-for="city_OUTSIDE_CITY_LIMITS" value="1">Outside City Limits</option>
                 @*<option asp-for="CITY" value=0>City Not Listed</option>*@
 
 
@@ -73,7 +73,7 @@
                 <option asp-for="COUNTY_ID" value=6>Davis</option>
                 <option asp-for="COUNTY_ID" value=7>Duchesne</option>
                 <option asp-for="COUNTY_ID" value=8>Emery</option>*@
-                <option asp-for="COUNTY_NAME_GARFIELD" value=1>Garfield</option>
+                <option asp-for="COUNTY_NAME_GARFIELD" value="1">Garfield</option>
                 @*<option asp-for="COUNTY_ID" value=10>Grand</option>
                 <option asp-for="COUNTY_ID" value=11>Iron</option>
                 <option asp-for="COUNTY_ID" value=12>Juab</option>
@@ -82,7 +82,7 @@
                 <option asp-for="COUNTY_ID" value=15>Morgan</option>
                 <option asp-for="COUNTY_ID" value=16>Piute</option>
                 <option asp-for="COUNTY_ID" value=17>Rich</option>*@
-                <option asp-for="COUNTY_NAME_SALT_LAKE" value=1 selected>Salt Lake</option>
+                <option asp-for="COUNTY_NAME_SALT_LAKE" value="0" selected>Salt Lake</option>
                 @*<option asp-for="COUNTY_ID" value=19>San Juan</option>
                 <option asp-for="COUNTY_ID" value=20>San Pete</option>
                 <option asp-for="COUNTY_ID" value=21>Sevier</option>
@@ -119,32 +119,32 @@
         <div class="form-group">
             <label>Pedestrian Involved</label> <br />
             <select>
-                <option asp-for="PEDESTRIAN_INVOLVED_TRUE" value=0>Yes</option>
-                <option asp-for="PEDESTRIAN_INVOLVED_TRUE" value=1 selected>No</option>
+                <option asp-for="PEDESTRIAN_INVOLVED_TRUE" value="1">Yes</option>
+                <option asp-for="PEDESTRIAN_INVOLVED_TRUE" value="0" selected>No</option>
             </select>
             <br />
         </div>
         <div class="form-group">
             <label>Bicyclist Involved</label> <br />
             <select>
-                <option asp-for="BICYCLIST_INVOLVED_TRUE" value=0>Yes</option>
-                <option asp-for="BICYCLIST_INVOLVED_TRUE" value=1 selected>No</option>
+                <option asp-for="BICYCLIST_INVOLVED_TRUE" value="1">Yes</option>
+                <option asp-for="BICYCLIST_INVOLVED_TRUE" value="0" selected>No</option>
             </select>
             <br />
         </div>
         <div class="form-group">
             <label>Motorcycle Involved</label> <br />
             <select>
-                <option asp-for="MOTORCYCLE_INVOLVED_TRUE" value=0>Yes</option>
-                <option asp-for="MOTORCYCLE_INVOLVED_TRUE" value=1 selected>No</option>
+                <option asp-for="MOTORCYCLE_INVOLVED_TRUE" value="1">Yes</option>
+                <option asp-for="MOTORCYCLE_INVOLVED_TRUE" value="0" selected>No</option>
             </select>
             <br />
         </div>
         <div class="form-group">
             <label>Commercial Motor Vehicle Involved</label> <br />
             <select>
-                <option asp-for="COMMERCIAL_MOTOR_VEH_INVOLVED_TRUE" value=0>Yes</option>
-                <option asp-for="COMMERCIAL_MOTOR_VEH_INVOLVED_TRUE" value=1 selected>No</option>
+                <option asp-for="COMMERCIAL_MOTOR_VEH_INVOLVED_TRUE" value="1">Yes</option>
+                <option asp-for="COMMERCIAL_MOTOR_VEH_INVOLVED_TRUE" value="0" selected>No</option>
             </select>
             <br />
         </div>
@@ -159,8 +159,8 @@
         <div class="form-group">
             <label>Improper Restraint</label> <br />
             <select>
-                <option asp-for="IMPROPER_RESTRAINT_TRUE" value=0>Yes</option>
-                <option asp-for="IMPROPER_RESTRAINT_TRUE" value=1 selected>No</option>
+                <option asp-for="IMPROPER_RESTRAINT_TRUE" value="1">Yes</option>
+                <option asp-for="IMPROPER_RESTRAINT_TRUE" value="0" selected>No</option>
             </select>
             <br />
         </div>
@@ -175,24 +175,24 @@
         <div class="form-group">
             <label>Drunk Under the Influence</label> <br />
             <select>
-                <option asp-for="DUI_TRUE" value=0>Yes</option>
-                <option asp-for="DUI_TRUE" value=1 selected>No</option>
+                <option asp-for="DUI_TRUE" value="1">Yes</option>
+                <option asp-for="DUI_TRUE" value="0" selected>No</option>
             </select>
             <br />
         </div>
         <div class="form-group">
             <label>Intersection</label> <br />
             <select>
-                <option asp-for="INTERSECTION_RELATED_TRUE" value=0>Yes</option>
-                <option asp-for="INTERSECTION_RELATED_TRUE" value=1 selected>No</option>
+                <option asp-for="INTERSECTION_RELATED_TRUE" value="1">Yes</option>
+                <option asp-for="INTERSECTION_RELATED_TRUE" value="0" selected>No</option>
             </select>
             <br />
         </div>
         <div class="form-group">
             <label>Wild Animal</label> <br />
             <select>
-                <option asp-for="WILD_ANIMAL_RELATED_TRUE" value=0>Yes</option>
-                <option asp-for="WILD_ANIMAL_RELATED_TRUE" value=1 selected>No</option>
+                <option asp-for="WILD_ANIMAL_RELATED_TRUE" value="1">Yes</option>
+                <option asp-for="WILD_ANIMAL_RELATED_TRUE" value="0" selected>No</option>
             </select>
             <br />
         </div>
@@ -207,8 +207,8 @@
         <div class="form-group">
             <label>Overturn</label> <br />
             <select>
-                <option asp-for="OVERTURN_ROLLOVER_TRUE" value=0>Yes</option>
-                <option asp-for="OVERTURN_ROLLOVER_TRUE" value=1 selected>No</option>
+                <option asp-for="OVERTURN_ROLLOVER_TRUE" value="1">Yes</option>
+                <option asp-for="OVERTURN_ROLLOVER_TRUE" value="0" selected>No</option>
             </select>
             <br />
         </div>
@@ -223,40 +223,40 @@
         <div class="form-group">
             <label>Older Driver Involved</label> <br />
             <select>
-                <option asp-for="OLDER_DRIVER_INVOLVED_TRUE" value=0>Yes</option>
-                <option asp-for="OLDER_DRIVER_INVOLVED_TRUE" value=1 selected>No</option>
+                <option asp-for="OLDER_DRIVER_INVOLVED_TRUE" value="1">Yes</option>
+                <option asp-for="OLDER_DRIVER_INVOLVED_TRUE" value="0" selected >No</option>
             </select>
             <br />
         </div>
         <div class="form-group">
             <label>Single Vehicle Accident</label> <br />
             <select>
-                <option asp-for="SINGLE_VEHICLE_TRUE" value=0>Yes</option>
-                <option asp-for="SINGLE_VEHICLE_TRUE" value=1 selected>No</option>
+                <option asp-for="SINGLE_VEHICLE_TRUE" value="1">Yes</option>
+                <option asp-for="SINGLE_VEHICLE_TRUE" value= "0"selected>No</option>
             </select>
             <br />
         </div>
         <div class="form-group">
             <label>Distracted Driving</label> <br />
             <select>
-                <option asp-for="DISTRACTED_DRIVING_TRUE" value=0>Yes</option>
-                <option asp-for="DISTRACTED_DRIVING_TRUE" value=1 selected>No</option>
+                <option asp-for="DISTRACTED_DRIVING_TRUE" value="1">Yes</option>
+                <option asp-for="DISTRACTED_DRIVING_TRUE" value="0" selected>No</option>
             </select>
             <br />
         </div>
         <div class="form-group">
             <label>Drowsy Driving</label> <br />
             <select>
-                <option asp-for="DROWSY_DRIVING_TRUE" value=0>Yes</option>
-                <option asp-for="DROWSY_DRIVING_TRUE" value=1 selected>No</option>
+                <option asp-for="DROWSY_DRIVING_TRUE" value="1">Yes</option>
+                <option asp-for="DROWSY_DRIVING_TRUE" value="0" selected>No</option>
             </select>
             <br />
         </div>
         <div class="form-group">
             <label>Roadway Departure</label> <br />
             <select>
-                <option asp-for="ROADWAY_DEPARTURE_TRUE" value=0>Yes</option>
-                <option asp-for="ROADWAY_DEPARTURE_TRUE" value=1 selected>No</option>
+                <option asp-for="ROADWAY_DEPARTURE_TRUE" value="1">Yes</option>
+                <option asp-for="ROADWAY_DEPARTURE_TRUE" value="0" selected>No</option>
             </select>
             <br />
         </div>
