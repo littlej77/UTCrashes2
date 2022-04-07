@@ -2,51 +2,34 @@
     ViewData["Title"] = "Crash Severity Calculator";
 }
 
-<div class="d-flex justify-content-center">
-    <h1>Crash Severity Calculator</h1> <br />
-    <p>this is the predict crash severity part from 455</p>
+<div >
+    <h1 class="d-flex justify-content-center">Crash Severity Calculator</h1> <br />
+    <p class="d-flex justify-content-center">this is the predict crash severity part from 455</p>
 </div>
-<br />
 <br />
 <div class="d-flex justify-content-center">
     <form method="post" asp-controller="Inference" asp-action="Score">
-        <!--<p>THESE ONES DON'T WORK THIS IS ONLY A TEST </p>
-        <div class="form-group">-->
-            @* CANNOT BE DYNAMIC, MUST BE CHOSEN FROM LIST OR SOMETHING *@
-            <!--<label>Route: </label>
-            <input asp-for="ROUTE" />
-            <br />
-        </div>
-        <div class="form-group">-->
-            @* CANNOT BE DYNAMIC, MUST BE CHOSEN FROM LIST OR SOMETHING *@
-            <!--<label>Milepoint: </label>
-            <input asp-for="MILEPOINT" />
-            <br />
-        </div>
-        <div class="form-group">-->
-            @* CANNOT BE DYNAMIC, MUST BE CHOSEN FROM LIST OR SOMETHING *@
-            <!--<label>Main Road Name</label>
-            <input asp-for="MAIN_ROAD_NAME" />
-            <br />
-        </div>-->
+        <div class="text-danger font-weight-bold bg-light" asp-validation-summary="All"></div>
         <div class="form-group">
-            <label>City</label>
+            <label>City</label> <br />
             <select>
-                @* WHAT ARE THE CITY values how are the city valued  *@
-                <option asp-for="CITY" value=1>American Fork</option>
-                <option asp-for="CITY" value=1>Highland</option>
-                <option asp-for="CITY" value=1>Layton</option>
-                <option asp-for="CITY" value=1>Provo</option>
-                <option asp-for="CITY" value=1>Roy</option>
-                <option asp-for="CITY" value=1>Salt Lake City</option>
-                <option asp-for="CITY" value=1>South Salt Lake</option>
-                <option asp-for="CITY" value=1>West Jordan</option>
-                <option asp-for="CITY" value=1>West Valley City</option>
-                <option asp-for="CITY" value=1>Outside City Limits</option>
+                @* WHAT ARE THE CITY values how are the city valued these are technically not correct *@
+                <option asp-for="city_AMERICAN FORK" value=1>American Fork</option>
+                <option asp-for="city_HIGHLAND" value=1>Highland</option>
+                <option asp-for="city_LAYTON" value=1>Layton</option>
+                <option asp-for="city_OGDEN" value=1>Ogden</option>
+                <option asp-for="city_PROVO" value=1>Provo</option>
+                <option asp-for="city_ROY" value=1>Roy</option>
+                <option asp-for="city_SALT LAKE CITY" value=1 selected>Salt Lake City</option>
+                <option asp-for="city_SOUTH SALT LAKE" value=1>South Salt Lake</option>
+                <option asp-for="city_WEST JORDAN'," value=1>West Jordan</option>
+                <option asp-for="city_WEST VALLEY CITY" value=1>West Valley City</option>
+                <option asp-for="city_OUTSIDE CITY LIMITS" value=1>Outside City Limits</option>
+                <option asp-for="CITY" value=0>City Not Listed</option>
             </select>
         </div>
         <div class="form-group">
-            <label>County</label>
+            <label>County</label> <br />
             <select>
                 <option asp-for="COUNTY_ID" value=1>Beaver</option>
                 <option asp-for="COUNTY_ID" value=2>Box Elder</option>
@@ -65,7 +48,7 @@
                 <option asp-for="COUNTY_ID" value=15>Morgan</option>
                 <option asp-for="COUNTY_ID" value=16>Piute</option>
                 <option asp-for="COUNTY_ID" value=17>Rich</option>
-                <option asp-for="COUNTY_ID" value=18>Salt Lake</option>
+                <option asp-for="COUNTY_ID" value=18 selected>Salt Lake</option>
                 <option asp-for="COUNTY_ID" value=19>San Juan</option>
                 <option asp-for="COUNTY_ID" value=20>San Pete</option>
                 <option asp-for="COUNTY_ID" value=21>Sevier</option>
@@ -81,9 +64,9 @@
             <br />
         </div>
         <div class="form-group">
-            <label>Crash Severity</label>
+            <label>Crash Severity</label> <br />
             <select>
-                <option asp-for="CRASH_SEVERITY_ID" value=1>No Injury</option>
+                <option asp-for="CRASH_SEVERITY_ID" value=1 selected>No Injury</option>
                 <option asp-for="CRASH_SEVERITY_ID" value=2>Possible Injury</option>
                 <option asp-for="CRASH_SEVERITY_ID" value=3>Minor Injury</option>
                 <option asp-for="CRASH_SEVERITY_ID" value=4>Serious Injury</option>
@@ -244,7 +227,7 @@
             <br />
         </div>
 
-        <button type="submit">Calculate</button>
+        <button type="submit" class="btn btn-outline-dark btn-large">Calculate</button>
     </form>
 </div>
 

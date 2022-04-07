@@ -30,7 +30,8 @@ namespace aspnetcore.Controllers
             {
                 NamedOnnxValue.CreateFromTensor("float_input", c.AsTensor())
             });
-            Tensor<float> score = result.First().AsTensor<float>();
+            //Tensor<float> score = result.First().AsTensor<float>();
+            Tensor<int> score = result.First().AsTensor<int>();
             var prediction = new Crash { CRASH_SEVERITY_ID = (int)score.First() };
             result.Dispose();
             return View("CalculatorResults", prediction);
