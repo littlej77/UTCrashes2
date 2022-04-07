@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ML.OnnxRuntime.Tensors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -28,6 +29,11 @@ namespace UTCrash2.Models
 
         [Required]
         public int CRASH_SEVERITY_ID { get; set; }
+
+        internal Tensor<object> AsTensor()
+        {
+            throw new NotImplementedException();
+        }
 
         public int WORK_ZONE_RELATED { get; set; }
         public int PEDESTRIAN_INVOLVED { get; set; }

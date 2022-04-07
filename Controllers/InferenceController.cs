@@ -3,8 +3,8 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.ML.OnnxRuntime;
 using Microsoft.ML.OnnxRuntime.Tensors;
-using INTEXPractice.Models;
 using UTCrash2.Models;
+
 
 namespace aspnetcore.Controllers
 { 
@@ -31,7 +31,7 @@ namespace aspnetcore.Controllers
                 NamedOnnxValue.CreateFromTensor("float_input", c.AsTensor())
             });
             Tensor<float> score = result.First().AsTensor<float>();
-            var prediction = new County { COUNTY_ID = score.First() };
+            var prediction = new County { COUNTY_ID = (int)score.First() };
             result.Dispose();
             return View("Score", prediction);
         }
