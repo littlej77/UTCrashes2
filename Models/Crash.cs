@@ -1,5 +1,4 @@
-﻿using Microsoft.ML.OnnxRuntime.Tensors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace UTCrash2.Models
 {
+    //This is our model for our crashes database
     public class Crash
     {
         [Key]
@@ -29,12 +29,6 @@ namespace UTCrash2.Models
 
         [Required]
         public int CRASH_SEVERITY_ID { get; set; }
-
-        //I wonder if this needs to go somewhere else...?
-        //internal Tensor<object> AsTensor()
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         public int WORK_ZONE_RELATED { get; set; }
         public int PEDESTRIAN_INVOLVED { get; set; }
@@ -62,32 +56,9 @@ namespace UTCrash2.Models
         [MaxLength(100)]
         public string Times { get; set; }
         public int Days { get; set; }
-        //had to add month
-        public int MONTH { get; set; }
         public int Months { get; set; }
         public int Years { get; set; }
         public int Hours { get; set; }
         public int Mins { get; set; }
-
-        //Attempt to do the thing with the cities
-        public int city_AMERICAN_FORK {get; set;}
-        public int city_HIGHLAND { get; set; }
-        public int city_LAYTON { get; set; }
-        public int city_OGDEN { get; set; }
-        public int city_PROVO { get; set; }
-        public int city_ROY { get; set; }
-        public int city_SALT_LAKE_CITY { get; set; }
-        public int city_SOUTH_SALT_LAKE { get; set; }
-        public int city_WEST_JORDAN { get; set; }
-        public int city_WEST_VALLEY_CITY { get; set; }
-        public int city_OUTSIDE_CITY_LIMITS { get; set; }
-
-
-        //public int COUNTY_NAME_GARFIELD { get; set; }
-        //public int COUNTY_NAME_SALT_LAKE { get; set; }
-
-
-
-       
     }
 }
